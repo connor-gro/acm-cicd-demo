@@ -18,15 +18,15 @@ jobs:
       -uses: actions/checkout@v4
       # set up the python environment
       -uses: actions/setup-python@v5
-        with:
+      with:
           python-version: '3.13'
       -name: Install uv
-        run: pip install uv
+      run: pip install uv
       -name: Install dependencies
-        run: uv sync
+      run: uv sync
       # run pytest
       -name: Run tests
-        run: uv run pytest
+      run: uv run pytest
 
   # deploy:
   #   name: Deploy app
@@ -34,6 +34,6 @@ jobs:
   #   needs: test
   #   concurrency: deploy-group    # optional: ensure only one action runs at a time
   #   steps:
-      # TODO: check out the repo
-      # TODO: use Fly.io's command line tool to deploy
-      # (you'll need to set the FLY_API_TOKEN secret for this)
+  #     TODO: check out the repo
+  #     TODO: use Fly.io's command line tool to deploy
+  #     (you'll need to set the FLY_API_TOKEN secret for this)
